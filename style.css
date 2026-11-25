@@ -52,7 +52,6 @@
 /* #### Text */
 
 --Gray-900: hsl(60, 10%, 19%);
---White: hsl(0, 100%, 100%);
 
 /* ### Theme dark-3 */
 
@@ -74,7 +73,6 @@
 
 --Yellow-300: hsl(52, 100%, 62%);
 --Blue-950: hsl(198, 20%, 13%);
---White: hsl(0, 100%, 100%);
 
 /* ## Typography */
 
@@ -96,13 +94,18 @@
     --key-shadow:var(--Gray-orange-400);
     --text1:var(--Navy-750);
     --text2: var(--White);
+     --result-text:var(--White);
+     --label-text: var(--White);
     --main-key-bg:var(--Gray-200);
-         --main-key-bg:var(--Gray-200);
      --del-key-bg: var(--Navy-700);
      --equal-key-bg: var(--Red-600);
     --main-key-shadow:var(--Gray-orange-400);
-    --del-key-shadow: var(--Red-800);
+    --del-key-shadow: var(--Navy-800);
     --equal-key-shadow: var(--Red-800);
+    --main-btn-hover: var(--White);
+    --del-btn-hover: hsl(225, 21%, 64%);
+    --equal-btn-hover:hsl(6, 63%, 60%);
+    --equal-btn-text: var(--White);
 }
 
 :root[data-theme="light"]{
@@ -113,12 +116,18 @@
      --toggle: var(--Orange-700);
     --text1:var(--Gray-900);
     --text2: var(--White);
+    --result-text: var(--white);
+     --label-text: var(--Gray-900);
      --main-key-bg:var(--Gray-200);
      --del-key-bg: var(--Blue-500);
      --equal-key-bg: var(--Orange-700);
     --main-key-shadow:var(--Grey-orange-450);
     --del-key-shadow: var(--Blue-600);
     --equal-key-shadow: var(--Orange-800);
+    --main-btn-hover: var(--White);
+    --del-btn-hover:hsl(185, 42%, 48%);
+      --equal-btn-hover:hsl(25, 99%, 47%);
+       --equal-btn-text: var(--White);
 }
 
 :root[data-theme="dark"]{
@@ -129,15 +138,19 @@
      --toggle: var(--Cyan-500);
     --key-shadow:var(--Purple-750);
     --text1:var(--Yellow-300);
-    --text-1b:var(--Blue-950);
     --text2: var(--White);
-
+ --result-text:var(--Yellow-300);
+  --label-text: var(--Yellow-300);
       --main-key-bg:var(--Purple-850);
      --del-key-bg: var(--Purple-800);
      --equal-key-bg: var(--Cyan-500);
     --main-key-shadow:var(--Purple-750);
     --del-key-shadow: var(--Purple-400);
     --equal-key-shadow: var(--Cyan-400);
+    --main-btn-hover: var(--Purple-800);
+      --del-btn-hover: hsl(285, 91%, 37%);
+      --equal-btn-hover:hsl(176, 100%, 54%);
+       --equal-btn-text: var(--Purple-950);
 }
 
 
@@ -157,11 +170,13 @@ body{
 
 h1{
     font-size: 2rem;
+    color: var(--label-text);
 }
 
 .p-theme{
     font-size: .8rem;
     text-transform: uppercase;
+    color: var(--label-text);
 }
 
 .theme-label{
@@ -171,6 +186,10 @@ h1{
     padding-right: .2rem;
     text-align: center;
     font-size: .9rem;
+}
+
+.theme-label-p{
+    color: var(--label-text);
 }
 
 .theme-switch{
@@ -202,8 +221,10 @@ cursor:pointer;
 }
 
 .button-theme:hover{
-    mix-blend-mode: hard-light;
+    mix-blend-mode:hard-light;
 }
+
+
 
 .theme-control{
     display: flex;
@@ -244,11 +265,14 @@ main{
 .result-container{
     background:var(--screen-bg);
     width: 100%;
+    height: 7.5rem;
     padding: 2.4rem 2rem;
     border-radius: var(--radius);
     font-size: 3.5rem;
     text-align: right;
     margin: 2rem 0 1.5rem 0;
+   color: var(--result-text);
+
 }
 
 .keypad-container{
@@ -280,7 +304,7 @@ cursor:pointer;
 }
 
 .keypad-button:hover{
-    background:var(--White);
+    background:var(--main-btn-hover);
 }
 
 .del-btn{
@@ -295,7 +319,6 @@ cursor:pointer;
 justify-content: center;
 padding: 1rem 0 .8rem 0;
 cursor:pointer;
-
      color: var(--text2);
  text-align: center;
       background: var(--del-key-bg);  
@@ -331,9 +354,13 @@ cursor:pointer;
    box-shadow: 0 .25rem 0 var(--equal-key-shadow);
 }
 
-.del-btn:hover, .reset-button:hover, .equayl-button:hover{
-    mix-blend-mode:hard-light;
-    opacity: .8;
+.del-btn:hover, .reset-button:hover{
+    background: var(--del-btn-hover);
+}
+
+.equal-button:hover{
+    background: var(--equal-btn-hover);
+    color: var(--equal-btn-text);
 }
 
 
