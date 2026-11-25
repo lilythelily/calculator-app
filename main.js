@@ -35,20 +35,20 @@ themeSwitche.addEventListener('click', (e)=>{
 
 // --- restore saved theme ---
 
-const themeMap = {
-  'button-1': { theme: 'middle', index: 0 },
-  'button-2': { theme: 'light', index: 1 },
-  'button-3': { theme: 'dark', index: 2 },
-};
+// const themeMap = {
+//   'button-1': { theme: 'middle', index: 0 },
+//   'button-2': { theme: 'light', index: 1 },
+//   'button-3': { theme: 'dark', index: 2 },
+// };
 
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-  html.dataset.theme = savedTheme;
-  const matchedEntry = Object.values(themeMap).find((entry) => entry.theme === savedTheme);
-  if (matchedEntry && switchBtns[matchedEntry.index]) {
-    setActiveSwitch(switchBtns[matchedEntry.index]);
-  }
-}
+// const savedTheme = localStorage.getItem('theme');
+// if (savedTheme) {
+//   html.dataset.theme = savedTheme;
+//   const matchedEntry = Object.values(themeMap).find((entry) => entry.theme === savedTheme);
+//   if (matchedEntry && switchBtns[matchedEntry.index]) {
+//     setActiveSwitch(switchBtns[matchedEntry.index]);
+//   }
+// }
 
 // --- calculation ---
 
